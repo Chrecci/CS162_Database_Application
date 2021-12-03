@@ -1,3 +1,4 @@
+# ignore this file
 create customer table
 add it to serializers, api, views, urls
 
