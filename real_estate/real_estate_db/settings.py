@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'real_estate_app.apps.RealEstateAppConfig',
-    'rest_framework'
+    'rest_framework',
+    'django_extensions'
 ]
 
 MIDDLEWARE = [
@@ -80,10 +81,10 @@ WSGI_APPLICATION = 'real_estate_db.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': "app_db",
+        'NAME': "real_estate_app_db",
         'USER': "postgres",
         'PASSWORD': "password",
-        'HOST': 'postgres_db',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }
