@@ -21,6 +21,8 @@ py -3 -m venv <name_of_environment>
 
 If you already have postgres installed and working, this way is probably faster:
 
+Make sure HOST in real_estate/real_estate_db/settings.py line 89 is set to "localhost"
+
 1. Install and setup postgres. Create a database called "real_estate_app_db". For help, see here: https://www.youtube.com/watch?
 v=uoJjDbL-Y_E
 2. enter real_estate directory:
@@ -44,6 +46,9 @@ python manage.py migrate
 python manage.py runserver
 ```
 ### Docker-Compose
+
+Make sure HOST in real_estate/real_estate_db/settings.py line 89 is set to "postgres_db"
+
 1. Install Docker for you device
 2. In a bash terminal at root of project, run the following. This might take a minute or so. When completed will exit terminal
 ```bash

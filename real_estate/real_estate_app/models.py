@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 import datetime
+from django.utils import timezone
 # Create your models here.
 
 class Office(models.Model):
@@ -11,7 +12,7 @@ class Office(models.Model):
     created_at = models.DateTimeField(null=True)
     def save(self, *args, **kwargs):
         if self.created_at is None:
-            self.created_at = datetime.datetime.now()
+            self.created_at = timezone.now()
         super().save(*args, **kwargs)
 
 class Agent(models.Model):
@@ -24,7 +25,7 @@ class Agent(models.Model):
     office = models.ForeignKey(Office, on_delete=models.CASCADE)
     def save(self, *args, **kwargs):
         if self.created_at is None:
-            self.created_at = datetime.datetime.now()
+            self.created_at = timezone.now()
         super().save(*args, **kwargs)
 
 
@@ -38,7 +39,7 @@ class Customer(models.Model):
     agent_representative = models.ForeignKey(Agent, on_delete=models.PROTECT)
     def save(self, *args, **kwargs):
         if self.created_at is None:
-            self.created_at = datetime.datetime.now()
+            self.created_at = timezone.now()
         super().save(*args, **kwargs)
 
 
@@ -60,9 +61,9 @@ class Listing(models.Model):
     created_at = models.DateTimeField(null=True)
     def save(self, *args, **kwargs):
         if self.created_at is None:
-            self.created_at = datetime.datetime.now()
+            self.created_at = timezone.now()
         if self.sold_on is None:
-            self.sold_on = datetime.datetime.now()
+            self.sold_on = timezone.now()
         super().save(*args, **kwargs)
 
 

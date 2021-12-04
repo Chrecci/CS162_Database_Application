@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': "real_estate_app_db",
         'USER': "postgres",
         'PASSWORD': "password",
-        'HOST': 'localhost',
+        'HOST': 'postgres_db',
         'PORT': 5432,
     }
 }
