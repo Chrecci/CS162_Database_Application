@@ -5,11 +5,12 @@ from statistics import mean
 from real_estate_app.models import Listing, Agent, Customer, Office
 import uuid
 from django.forms.models import model_to_dict
+from django.utils import timezone
 
 #1. Find the top 5 offices with the most sales for that month.
 from django.db.models import Count, Sum, Avg, F
 #specify time frame that we want, 31 days
-last_month = datetime.today() - timedelta(days=31)
+last_month = timezone.now() - timedelta(days=31)
 #'-' in front of dcount means ascending
 result_dict_1 = pd.DataFrame((list(Listing.objects
     .filter(created_at__gte=last_month)

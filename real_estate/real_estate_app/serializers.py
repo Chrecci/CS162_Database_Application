@@ -15,7 +15,7 @@ class ListingSerializer(serializers.ModelSerializer):
                 'agent_commission',
                 'office',
                 'sold',
-                'sold_on'
+                'sold_on',
                 'customer',
                 'created_at')
 class AgentSerializer(serializers.ModelSerializer):

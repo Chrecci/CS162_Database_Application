@@ -1,5 +1,6 @@
 import os
 from datetime import datetime, timedelta
+from django.utils import timezone
 import random
 from real_estate_app.models import Listing, Agent, Customer, Office
 import uuid

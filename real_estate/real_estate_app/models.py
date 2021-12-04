@@ -12,6 +12,7 @@ class Office(models.Model):
     created_at = models.DateTimeField(null=True)
     def save(self, *args, **kwargs):
         if self.created_at is None:
+            #throughout project, I will use Django timezone.now(). datetime is a naive time object, want to avoid
             self.created_at = timezone.now()
         super().save(*args, **kwargs)
 

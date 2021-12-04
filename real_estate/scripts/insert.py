@@ -1,16 +1,4 @@
-'''import psycopg2
-
-conn = psycopg2.connect(host="postgres_db",
-                        port=5432,
-                        user="postgres",
-                        password="password",
-                        database="app_db") # To remove slash
-
-cursor = conn.cursor()
-cursor.execute("INSERT INTO Agent(name, email) VALUES('cc', 'eyo@gmail.com');")
-conn.commit() # <- We MUST commit to reflect the inserted data
-cursor.close()
-conn.close()'''
+from django.utils import timezone
 import os
 import datetime
 from real_estate_app.models import Listing, Agent, Customer, Office

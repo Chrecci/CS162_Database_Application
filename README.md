@@ -7,6 +7,11 @@ A full fledged application that meets all assignment requirements specified here
 This application is built using Django REST Framework, exposing an api for frontend use. Thus, if a company wanted to use this service and build out an interative user interface using React, for example, they have the full flexibility of doing so. I believe this app goes above and beyond what was required in many ways, and I want to justify both the why and how it does so. I decided to use Django for a number of reasons. The first being, I figured I could get extra practice for my own skill development, and secondly, it provides a powerful ORM and extensions that allow me to efficiently develop the database capacities for this project. Lastly, if a real estate company really told me to build something like this, I would need it to be usable enough for most people to access. Django's REST Framework provides exactly that. I don't have a react frontend built out right now, but if I wanted to, I would be very glad I put in this extra work at this stage.
 
 ## Setup
+
+The project as is, is configured for a docker setup. For local setup, please see warning to change HOST in settings.
+
+I HIGHLY suggest either using only a local setup or docker. Inter-mixing will mess up your postgres connection, and unless you're really good at this stuff I don't suggest you do it. It normally should be ok (just make sure you consistently change localhost vs postgres_db in settings databases HOST) but if things are messed up with postgres connection, a simple restart of your device should be fine.
+
 ### Virtual Environment
 *If you're reading from direct README.md file, don't forget to ignore br (newline) tags*
 
@@ -25,13 +30,13 @@ Make sure HOST in real_estate/real_estate_db/settings.py line 89 is set to "loca
 
 1. Install and setup postgres. Create a database called "real_estate_app_db". For help, see here: https://www.youtube.com/watch?
 v=uoJjDbL-Y_E
+3. Install requirements.txt after entering virtual environment (see above)
+```bash
+pip install -r requirements.txt
+```
 2. enter real_estate directory:
 ```bash
 cd real_estate
-```
-3. Install requirements.txt
-```bash
-pip install -r requirements.txt
 ```
 4. Make migrations
 ```bash
@@ -90,7 +95,7 @@ Follow the prompt to create superuser. Then, simply log in at http://localhost:8
 
 ### Test
 
-This is where the actual assignment requirements are completed. These files can all be found in real_estate/scripts
+This is where the actual assignment requirements are completed. These files can all be found in real_estate/scripts. Not only is the basic assignment requirements met fully (every query is successful), but the project takes many extra steps to ensure the meta-task of making something usable is achieved, at least to a decent extent.
 
 1. Insert all test data:
 ```
@@ -113,3 +118,7 @@ At some point, you may or may not have to run the following command, if you see 
 export DJANGO_SETTINGS_MODULE=real_estate_db.settings
 ```
 
+To delete all data in tables and restart:
+```
+python manage.py flush
+```
